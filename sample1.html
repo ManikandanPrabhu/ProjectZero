@@ -1,0 +1,54 @@
+ <!DOCTYPE html>
+ 
+<html lang="en-US">
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.1/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+<!-- jquery UI loaded -->
+<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script> 
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+<script src="sample1.js"></script>
+
+<link rel="stylesheet" type="text/css" href="sample.css">
+</head>
+<body>
+
+<div ng-app= "MyApp" ng-controller="MyCtrl" class ="fullApp">
+  
+  <form name ="loginForm" ng-hide="loggedin">
+  <h1> Login using your credentials </h1>
+	  <div >Enter your UserName : <input type="text" placeholder="UserName" ng-model="username" required> </div> </br>
+	  <div >Enter your Password : <input type="password" placeholder="password" ng-model="password" required></div> </br>
+	  <button type="submit" value="login" ng-click="onsubmit()" ng-disabled="loginForm.$invalid"> submit </button>
+  </form>
+
+  <div ng-show ="loggedin">
+		<p>Name : <input type="text" ng-model="name"> <span class="logout" ng-click="onlogout()">Logout </span></p>
+		<h1>Hello {{name}}</h1>
+		<p> Movie : <input type="text" placeholder="Search Movie or Theatre" ng-model="movieTheatreSearch"> </p>
+		<table class="movieTheatrelist">
+		<tr><th>Theatre</th><th>Movie</th></tr>
+				<tr ng-repeat="movie in movies |filter:movieTheatreSearch track by $index">
+					<td class="TheatreContainer">{{movie.name}}</td>
+					<td class="movieContainer">{{movie.movieName}}</td>
+				</tr>
+		</table>
+
+
+		<menu-home> </menu-home>
+		<div id="mainList" ng-hide=true>
+			<div ng-repeat ="theatre in theatres">
+				<span class="theatre">{{theatre.name}} </span>
+				<span class="movie">:  {{theatre.movieName}} </span>
+			</div>
+		</div>
+	</div>
+</div>
+
+</body>
+</html> 
