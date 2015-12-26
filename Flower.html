@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+ 
+<html lang="en-US">
+<head>
+<title> Flowers Page </title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.1/angular.min.js"></script>
+<script src="flower.js"></script>
+<link rel="stylesheet" type="text/css" href="flower.css">
+</head>
+
+
+<body>
+<div ng-app= "MyApp" ng-controller="MyCtrl" class ="fullApp">
+
+	<div>
+	 {{images.url}}	
+		<h1>{{title}}</h1>
+		<ul>
+			<a href="images/s1.jpg"/>
+				<img  class="og-grid" src="images/s1.jpg"/> 
+			<a href="images/s2.jpg" target="_blank"/>
+				<img class="og-grid" src="images/s2.jpg" />
+			<a href="images/s3.jpg" target="_blank"/>
+				<img  class="og-grid" src="images/s3.jpg"  />
+
+		</ul>
+	</div>
+</div>
+
+</body>
