@@ -2,6 +2,7 @@
 
 var myApp = angular.module('MyApp', []);
 
+
  myApp.controller('MyCtrl', function($scope, $http) {
   $scope.loggedin = false;  
   var userData;
