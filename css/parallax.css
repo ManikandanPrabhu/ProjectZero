@@ -1,0 +1,11 @@
+.navbar-default {
+  background: url(/images/bg_menu.png) no-repeat center top;
+  height: 179px;
+  border-color: transparent;
+}
+.navbar-default .navbar-text {
+  font: 3em 'PacificoRegular';
+}
+.navbar-default .secon-text {
+  float: right;
+}

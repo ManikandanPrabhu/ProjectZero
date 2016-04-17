@@ -10,7 +10,8 @@ module.exports = function(grunt) {
         less: {
           build: {
             files: {
-              'css/sample.css': 'css/sample.less'
+              'css/sample.css': 'css/sample.less',
+              'css/parallax.css': 'css/parallax.less'
             }
           }
         },

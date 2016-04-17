@@ -1,0 +1,40 @@
+doctype html
+html(lang='en-US')
+  head
+    title My Parallax
+    script(src='https://ajax.googleapis.com/ajax/libs/angularjs/1.4.1/angular.min.js')
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js')
+    // Latest compiled and minified CSS
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css')
+    // Latest compiled and minified JavaScript
+    script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js')
+    script(src='www/assets/js/sample.js')
+    link(rel='stylesheet', type='text/css', href='css/demo.css')
+  body
+    .fullApp(ng-app='MyApp', ng-controller='MyCtrl')
+      form(name='loginForm', ng-hide='loggedin')
+        h1  Login using your credentials 
+        div
+          | Enter your UserName : 
+          input(type='text', placeholder='UserName', ng-model='username', required='')
+        br
+        div
+          | Enter your Password : 
+          input(type='password', placeholder='password', ng-model='password', required='')
+        br
+        button(type='submit', value='login', ng-click='onsubmit()', ng-disabled='loginForm.$invalid')  submit 
+      div(ng-show='loggedin')
+        nav.navbar.navbar-default.navbar-fixed-top
+          .container
+            span.navbar-text  Welcome to Mani's  
+            span.navbar-text.secon-text  World Of Parallex 
+        // End of Movies List
+        // Commenting this line as of now : can uncomment later
+        //
+          <menu-home> </menu-home>
+          <div id="mainList" ng-hide=true>
+          <div ng-repeat ="theatre in theatres">
+          <span class="theatre">{{theatre.name}} </span>
+          <span class="movie">:  {{theatre.movieName}} </span>
+          </div>
+          </div>
